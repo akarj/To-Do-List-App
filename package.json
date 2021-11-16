@@ -1,0 +1,24 @@
+{
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "\"A full stack web app which allows users to do CRUD operation developed with ReactJs, Node JS, Express Js and MySQL\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js",
+    "start": "npm index.js"
+  },
+  "keywords": [
+    "ReactJS",
+    "NodeJS",
+    "ExpressJS",
+    "MySQL"
+  ],
+  "author": "Anuj Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
