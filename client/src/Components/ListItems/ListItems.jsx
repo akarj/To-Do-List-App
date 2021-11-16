@@ -4,7 +4,7 @@ const ListItems = () => {
   return (
     <div>
       <input type="checkbox" name="check" id="check" />
-      <label htmlFor="check">Something Just like this...</label>
+      <span className="To-do-item-desc-span">Something Just like this...</span>
     </div>
   );
 };
