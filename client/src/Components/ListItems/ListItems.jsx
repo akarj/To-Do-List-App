@@ -19,7 +19,10 @@ const ListItems = () => {
 
   return (
     <List
-      sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+      sx={{
+        width: "35rem",
+        bgcolor: "background.paper",
+      }}
       component="nav"
     >
       <ListItemButton onClick={handleClick}>
@@ -31,18 +34,6 @@ const ListItems = () => {
       </ListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          <ListItemButton sx={{ pl: 4 }}>
-            <ListItemIcon>
-              <Checkbox />
-            </ListItemIcon>
-            <ListItemText primary="Starred" />
-          </ListItemButton>
-          <ListItemButton sx={{ pl: 4 }}>
-            <ListItemIcon>
-              <Checkbox />
-            </ListItemIcon>
-            <ListItemText primary="Starred" />
-          </ListItemButton>
           <ListItemButton sx={{ pl: 4 }}>
             <ListItemIcon>
               <Checkbox />
