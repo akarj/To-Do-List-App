@@ -5,8 +5,12 @@ import ToDoBlock from "./Components/ToDoBlock/ToDoBlock";
 function App() {
   return (
     <div className="App">
-      <InputSection />
-      <ToDoBlock />
+      <section className="InputSection">
+        <InputSection />
+      </section>
+      <section className="To-Do-Section">
+        <ToDoBlock />
+      </section>
     </div>
   );
 }

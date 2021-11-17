@@ -1,0 +1,23 @@
+div.inputSectionContainer {
+  width: 70%;
+  display: flex;
+
+  .inputSectionContaingStack {
+    flex: 7.5;
+  }
+
+  .inputField {
+    flex: 2.5;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div.inputSection {
+    background-color: chartreuse;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+  }
+}

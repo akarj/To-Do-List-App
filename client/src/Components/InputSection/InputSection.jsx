@@ -1,16 +1,28 @@
 import "./InputSection.scss";
+import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import ListItems from "../ListItems/ListItems";
 
 const InputSection = () => {
   return (
-    <div className="inputSection">
-      <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-      <Button variant="contained" size="large">
-        Add Item
-      </Button>
-      <ListItems />
+    <div className="inputSectionContainer">
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        spacing={{ xs: 1, sm: 2, md: 4 }}
+        className="inputSectionContaingStack"
+      >
+        <TextField
+          id="outlined-basic"
+          label="Add a task..."
+          variant="outlined"
+          autoFocus
+          // fullWidth
+          className="inputField"
+        />
+        <Button variant="contained" size="large" className="Button">
+          Add Item
+        </Button>
+      </Stack>
     </div>
   );
 };
