@@ -7,7 +7,9 @@ function App() {
   // TODO: Functions
   // Funtion to add task in the List
   const addToDoTaskButtonHandler = e => {
-    console.log(e.target);
+    if (e === "") return;
+    console.log("button Clicked");
+    console.log(e);
   };
   return (
     <div className="App">

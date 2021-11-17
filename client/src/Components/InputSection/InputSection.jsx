@@ -3,7 +3,18 @@ import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import AddTaskIcon from "@mui/icons-material/AddTask";
-const InputSection = () => {
+import { useState } from "react";
+const InputSection = ({ addTaskToList }) => {
+  const [taskInInputField, setTaskInInputField] = useState("");
+
+  // TODO: Function
+  // function for Add Item Button Click to make input field Empty
+  const addItemButtonClickHandler = () => {
+    if (taskInInputField === "") return;
+    addTaskToList(taskInInputField);
+    setTaskInInputField("");
+  };
+
   return (
     <div className="inputSectionContainer">
       <Stack
@@ -15,14 +26,17 @@ const InputSection = () => {
           id="outlined-basic"
           label="Add a task..."
           variant="outlined"
-          autoFocus
           className="inputField"
+          value={taskInInputField}
+          onChange={e => setTaskInInputField(e.target.value)}
+          maxRows="1"
         />
         <Button
           variant="contained"
           startIcon={<AddTaskIcon />}
           size="large"
           className="Button"
+          onClick={addItemButtonClickHandler}
         >
           Add Item
         </Button>
