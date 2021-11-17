@@ -1,15 +1,22 @@
 import "./App.scss";
 import InputSection from "./Components/InputSection/InputSection";
 import ToDoBlock from "./Components/ToDoBlock/ToDoBlock";
+import { Data } from "./Dummydata";
 
 function App() {
+  // TODO: Functions
+  // Funtion to add task in the List
+  const addToDoTaskButtonHandler = e => {
+    console.log(e.target);
+  };
   return (
     <div className="App">
+      {console.log(Data)}
       <section className="InputSection">
-        <InputSection />
+        <InputSection addTaskToList={addToDoTaskButtonHandler} />
       </section>
       <section className="To-Do-Section">
-        <ToDoBlock />
+        <ToDoBlock ToDoListData={Data} />
       </section>
     </div>
   );
