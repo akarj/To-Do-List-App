@@ -13,7 +13,7 @@ function App() {
   };
   return (
     <div className="App">
-      {console.log(Data)}
+      {/* {console.log(Data)} */}
       <section className="InputSection">
         <InputSection addTaskToList={addToDoTaskButtonHandler} />
       </section>

@@ -10,7 +10,7 @@ import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
 
-const ListItems = () => {
+const ListItems = ({ Item }) => {
   const [open, setOpen] = useState(true);
 
   const handleClick = () => {
@@ -29,29 +29,21 @@ const ListItems = () => {
         <ListItemIcon>
           <Checkbox />
         </ListItemIcon>
-        <ListItemText primary="Inbox" />
+        <ListItemText primary={Item.text} />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          <ListItemButton sx={{ pl: 4 }}>
-            <ListItemIcon>
-              <Checkbox />
-            </ListItemIcon>
-            <ListItemText primary="Starred" />
-          </ListItemButton>
-          <ListItemButton sx={{ pl: 4 }}>
-            <ListItemIcon>
-              <Checkbox />
-            </ListItemIcon>
-            <ListItemText primary="Starred" />
-          </ListItemButton>
-          <ListItemButton sx={{ pl: 4 }}>
-            <ListItemIcon>
-              <Checkbox />
-            </ListItemIcon>
-            <ListItemText primary="Starred" />
-          </ListItemButton>
+          {Item.subtasks.map(subtask => (
+            <ListItemButton sx={{ pl: 4 }} key={subtask.id}>
+              <ListItemIcon>
+                <Checkbox
+                  checked={subtask.Status === "completed" ? true : false}
+                />
+              </ListItemIcon>
+              <ListItemText primary={subtask.text} />
+            </ListItemButton>
+          ))}
         </List>
       </Collapse>
     </List>
